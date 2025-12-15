@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunes Be One - Basketball CMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <h1>🏀 Dunes Be One</h1>
+                </div>
+                <nav class="navbar-menu">
+                    <a href="#home" class="nav-link active" onclick="navigateTo('home')">HOME</a>
+                    <a href="#dashboard" class="nav-link" onclick="navigateTo('dashboard')">DASHBOARD</a>
+                </nav>
+                <div class="navbar-user">
+                    <button id="loginBtn" class="btn btn-primary" onclick="showModal('loginModal')">LOGIN</button>
+                    <div id="userMenu" class="user-menu hidden">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="btn btn-secondary" onclick="app.logout()">LOGOUT</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="homePage" class="page">
+                <div class="hero">
+                    <h2>Welcome to Dunes Be One Basketball Platform</h2>
+                    <p>Manage Athletes • Track Performance • Develop Champions</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="navigateTo('dashboard')">Get Started</button>
+                        <button class="btn btn-secondary" onclick="showModal('aboutModal')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-4">
+                    <div class="tile">
+                        <div class="tile-icon">👥</div>
+                        <h3>ATHLETES</h3>
+                        <p class="tile-stat" id="athleteCount">245</p>
+                        <p>Athletes</p>
+                        <button class="btn btn-outline" onclick="alert('Feature coming soon')">VIEW</button>
+                    </div>
+
+                    <div class="tile">
+                        <div class="tile-icon">🏀</div>
+                        <h3>GAMES</h3>
+                        <p class="tile-stat" id="gameCount">1,250</p>
+                        <p>Games</p>
+                        <button class="btn btn-outline" onclick="alert('Feature coming soon')">VIEW</button>
+                    </div>
+
+                    <div class="tile">
+                        <div class="tile-icon">📊</div>
+                        <h3>STATISTICS</h3>
+                        <p class="tile-stat" id="statCount">3,450</p>
+                        <p>Statistics</p>
+                        <button class="btn btn-outline" onclick="alert('Feature coming soon')">VIEW</button>
+                    </div>
+
+                    <div class="tile">
+                        <div class="tile-icon">📈</div>
+                        <h3>PERFORMANCE</h3>
+                        <p class="tile-stat" id="perfCount">485</p>
+                        <p>Benchmarks</p>
+                        <button class="btn btn-outline" onclick="alert('Feature coming soon')">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <h3>RECENT ACTIVITY</h3>
+                    <ul id="recentActivity">
+                        <li>🏆 Game Completed: Hawks vs Falcons - Hawks won 78-65</li>
+                        <li>⭐ Player Achievement: Marcus Johnson scored 25 points</li>
+                        <li>💪 Training Update: Squad A completed conditioning session</li>
+                        <li>📰 News: Coach Sarah Williams joins Elite Academy</li>
+                    </ul>
+                </div>
+
+                <div class="action-card">
+                    <h3>QUICK ACTIONS</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="alert('Feature coming soon')">+ Add Athlete</button>
+                        <button class="btn btn-primary" onclick="alert('Feature coming soon')">Schedule Game</button>
+                        <button class="btn btn-primary" onclick="alert('Feature coming soon')">Record Training</button>
+                        <button class="btn btn-primary" onclick="alert('Feature coming soon')">Post News</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Page -->
+            <section id="dashboardPage" class="page hidden">
+                <h2>Dashboard</h2>
+                <div id="dashboardContent">
+                    <p>Loading dashboard...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Sign In to Your Account</h3>
+                    <button class="close-btn" onclick="closeModal('loginModal')">&times;</button>
+                </div>
+                <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">SIGN IN</button>
+                </form>
+                <p style="text-align: center; margin-top: 16px; font-size: 12px;">
+                    Demo: Use test@example.com / password123 (after setup)
+                </p>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div id="aboutModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>About Dunes Be One</h3>
+                    <button class="close-btn" onclick="closeModal('aboutModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Dunes Be One Basketball CMS Platform</strong> is a comprehensive system for managing basketball player development, performance tracking, and talent scouting.</p>
+                    <h4 style="margin-top: 16px;">With our platform, you can:</h4>
+                    <ul>
+                        <li>✓ Track athlete training and performance</li>
+                        <li>✓ Manage game schedules and statistics</li>
+                        <li>✓ View real-time performance analytics</li>
+                        <li>✓ Identify and develop basketball talent</li>
+                        <li>✓ Access role-based dashboards</li>
+                    </ul>
+                    <p style="margin-top: 16px;"><strong>Organization:</strong> Dunes Be One Basketball Organization</p>
+                    <p><strong>Version:</strong> 1.0.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dunes Be One Basketball Organization. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

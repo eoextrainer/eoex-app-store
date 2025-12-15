@@ -1,0 +1,59 @@
+On the app store front end create an elegant app store UI by copying the design, layout, and colour scheme of the Netflix application.
+
+The app store will host apps of the following families:
+    - Education & Learning: online learning courses of all types
+    - Personal Finances: budget, debts, loan and other personal finances
+    - Travel: holiday and business trip planning apps
+    - Health, Wellness & Fitness
+    - Lifestyle & Daily Utilities
+    - Hobbies
+    - Productivity & Tools (personal assistant): ai-based mobile apps to help individuals with their daily professional duties
+    - Entertainment, Gaming & Media
+    - Shopping & Commerce
+    - Events & Meetups
+
+Structure the EOEX app store front end as follows:
+
+Header:
+    - Thin section: max 200 pixels in height
+    - Dark gray background
+    - In the middle of the screen the logo EOEX in dark gold letters
+    - Below the logo the letters: APP STORE in Netflix red colour
+    - Far right corner of the header section: login | sign in
+
+Section 1: Horizontal carousel
+    - Toggles through the cover poster of the latest 5 apps.
+    - These cover poster image URLs:
+        -
+        -
+        -
+        -
+        -
+    - Each poster has an elegant frame around it, the name of the app below, the app family type below
+    - The carousel will show only one poster at a time and after 2 seconds it will toggle to the next, repeatedly and in a cycle
+    - This section has a unique metallic dark gray smokey background, premium contrasting fonts
+    - The carousel does not spread through the full screen width but occupies the visible part of a desktop screen
+
+Section 2: App categories
+    - Create a horizontal carousel that shows inside its own tile the video URL of the app trailer
+    - This section will show up to 6 app tiles per category and will contain in total 9 tiles so as to show the remaining 3 after 3 seconds and then cycle again with the tile videos on autoplay and silent
+    - The app categories are:
+        - Education & Learning: online learning courses of all types
+        - Personal Finances: budget, debts, loan and other personal finances
+        - Travel: holiday and business trip planning apps
+        - Health, Wellness & Fitness
+        - Lifestyle & Daily Utilities
+        - Hobbies
+        - Productivity & Tools (personal assistant): ai-based mobile apps to help individuals with their daily professional duties
+        - Entertainment, Gaming & Media
+        - Shopping & Commerce
+        - Events & Meetups
+    - This section has a unique medium gray smokey background, premium contrasting fonts
+
+Section 3: 5 by 5 grid of every app currently in the store
+    - Each grid is a tile containing the video URL of the app trailer
+    - This grid is elegant with premium fonts
+
+Section 4: Footer section: fill this section with similar footer information found on https://www.apple.com/fr/app-store/
+
+For every app tile create an elegant red frame on hover.
