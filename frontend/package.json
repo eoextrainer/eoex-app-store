@@ -1,0 +1,10 @@
+{
+  "name": "eoex-app-store-frontend",
+  "version": "1.0.0",
+  "description": "PWA frontend for EOEX App Store",
+  "scripts": {
+    "build": "cp -r src/* public/ || true"
+  },
+  "author": "eoextrainer",
+  "license": "MIT"
+}
