@@ -1,22 +1,18 @@
 {
-  "name": "EOEX App Store DevContainer",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  "name": "EOEX Store Codespace",
+  "build": {
+    "dockerfile": "../Dockerfile"
   },
-  "postCreateCommand": "pip install -r backend/requirements.txt || true",
+  "forwardPorts": [8081, 19000, 19001, 19002],
+  "postCreateCommand": "npm install",
   "customizations": {
     "vscode": {
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python3"
-      },
+      "settings": {},
       "extensions": [
-        "ms-python.python",
-        "ms-azuretools.vscode-docker",
-        "esbenp.prettier-vscode"
+        "ms-vscode.vscode-react-native",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
       ]
     }
-  },
-  "forwardPorts": [80, 8000],
-  "remoteUser": "vscode"
+  }
 }
