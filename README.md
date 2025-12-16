@@ -1,5 +1,7 @@
 # EOEX Store
 
+This repository: **eoex-app-store**
+
 A Netflix-style hybrid mobile and web app built with React Native and Expo, featuring cinematic UI, secure authentication, and deep linking to YouTube. 
 
 ## Features

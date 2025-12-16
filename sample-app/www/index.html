@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Hello World Hybrid App</title>
+</head>
+<body>
+  <h1>Hello World from Hybrid App!</h1>
+  <button onclick="checkUpdate()">Check for Update</button>
+  <script>
+  async function checkUpdate() {
+    const slug = "hello-world"; // matches store entry
+    const platform = /Android/.test(navigator.userAgent) ? "android" : "web";
+    const res = await fetch(`https://your-store.example.com/api/versions/${slug}/latest?platform=${platform}`);
+    const v = await res.json();
+    if (v.semver && v.semver !== "1.0.0") {
+      const ok = confirm(`Update available ${v.semver}. Install now?`);
+      if (ok && v.file_url) location.href = v.file_url;
+    }
+  }
+  checkUpdate();
+  </script>
+</body>
+</html>
